@@ -35,6 +35,8 @@
             this.btnAccept = new System.Windows.Forms.Button();
             this.btnRefuse = new System.Windows.Forms.Button();
             this.lblAgreement = new System.Windows.Forms.Label();
+            this.btnCloseLicense = new System.Windows.Forms.Button();
+            this.lblLicAccepted = new System.Windows.Forms.Label();
             this.titleBar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,8 +77,10 @@
             // 
             // btnAccept
             // 
-            this.btnAccept.BackColor = System.Drawing.Color.Gray;
+            this.btnAccept.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnAccept.FlatAppearance.BorderSize = 0;
             this.btnAccept.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAccept.ForeColor = System.Drawing.Color.Gray;
             this.btnAccept.Location = new System.Drawing.Point(565, 394);
             this.btnAccept.Name = "btnAccept";
             this.btnAccept.Size = new System.Drawing.Size(126, 32);
@@ -87,8 +91,10 @@
             // 
             // btnRefuse
             // 
-            this.btnRefuse.BackColor = System.Drawing.Color.Gray;
+            this.btnRefuse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnRefuse.FlatAppearance.BorderSize = 0;
             this.btnRefuse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefuse.ForeColor = System.Drawing.Color.Gray;
             this.btnRefuse.Location = new System.Drawing.Point(433, 394);
             this.btnRefuse.Name = "btnRefuse";
             this.btnRefuse.Size = new System.Drawing.Size(126, 32);
@@ -107,20 +113,46 @@
             this.lblAgreement.Text = "You must agree to this license in order to use this software:";
             this.lblAgreement.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // btnCloseLicense
+            // 
+            this.btnCloseLicense.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnCloseLicense.FlatAppearance.BorderSize = 0;
+            this.btnCloseLicense.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCloseLicense.ForeColor = System.Drawing.Color.Gray;
+            this.btnCloseLicense.Location = new System.Drawing.Point(565, 394);
+            this.btnCloseLicense.Name = "btnCloseLicense";
+            this.btnCloseLicense.Size = new System.Drawing.Size(126, 32);
+            this.btnCloseLicense.TabIndex = 5;
+            this.btnCloseLicense.Text = "Close";
+            this.btnCloseLicense.UseVisualStyleBackColor = false;
+            this.btnCloseLicense.Click += new System.EventHandler(this.btnCloseLicense_Click);
+            // 
+            // lblLicAccepted
+            // 
+            this.lblLicAccepted.AutoSize = true;
+            this.lblLicAccepted.ForeColor = System.Drawing.Color.Green;
+            this.lblLicAccepted.Location = new System.Drawing.Point(118, 401);
+            this.lblLicAccepted.Name = "lblLicAccepted";
+            this.lblLicAccepted.Size = new System.Drawing.Size(441, 19);
+            this.lblLicAccepted.TabIndex = 6;
+            this.lblLicAccepted.Text = "You have already accepted the license agreement.";
+            // 
             // LicenseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(703, 438);
+            this.Controls.Add(this.lblLicAccepted);
             this.Controls.Add(this.lblAgreement);
             this.Controls.Add(this.btnRefuse);
             this.Controls.Add(this.btnAccept);
             this.Controls.Add(this.lblTheLicense);
             this.Controls.Add(this.titleBar);
+            this.Controls.Add(this.btnCloseLicense);
             this.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "LicenseForm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
@@ -129,6 +161,7 @@
             this.Load += new System.EventHandler(this.LicenseForm_Load);
             this.titleBar.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -140,5 +173,7 @@
         private System.Windows.Forms.Button btnAccept;
         private System.Windows.Forms.Button btnRefuse;
         private System.Windows.Forms.Label lblAgreement;
+        private System.Windows.Forms.Button btnCloseLicense;
+        private System.Windows.Forms.Label lblLicAccepted;
     }
 }

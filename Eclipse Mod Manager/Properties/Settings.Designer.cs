@@ -23,7 +23,11 @@ namespace Eclipse_Mod_Manager.Properties {
             }
         }
         
+        /// <summary>
+        /// Has the License been accepted?
+        /// </summary>
         [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsDescriptionAttribute("Has the License been accepted?")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool LicenseAccepted {
@@ -32,6 +36,46 @@ namespace Eclipse_Mod_Manager.Properties {
             }
             set {
                 this["LicenseAccepted"] = value;
+            }
+        }
+        
+        /// <summary>
+        /// Is this the user&apos;s first launch?
+        /// </summary>
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsDescriptionAttribute("Is this the user\'s first launch?")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool FirstLaunch {
+            get {
+                return ((bool)(this["FirstLaunch"]));
+            }
+            set {
+                this["FirstLaunch"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string GameFolder {
+            get {
+                return ((string)(this["GameFolder"]));
+            }
+            set {
+                this["GameFolder"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool TipLabelsHidden {
+            get {
+                return ((bool)(this["TipLabelsHidden"]));
+            }
+            set {
+                this["TipLabelsHidden"] = value;
             }
         }
     }

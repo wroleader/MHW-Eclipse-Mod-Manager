@@ -5,10 +5,11 @@ using System.Data;
 using System.Drawing;
 using System.Reflection;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Windows.Forms.VisualStyles;
+using Eclipse_Mod_Manager.Properties;
+using System.Diagnostics;
 
 namespace Eclipse_Mod_Manager
 {
@@ -22,7 +23,7 @@ namespace Eclipse_Mod_Manager
 
         [DllImportAttribute("user32.dll")]
         public static extern bool ReleaseCapture();
-
+        ConfigManager confMan = new ConfigManager();
         public Form1()
         {
             InitializeComponent();
@@ -49,17 +50,19 @@ namespace Eclipse_Mod_Manager
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            ConfigManager confMan = new ConfigManager();
             confMan.InitSettings();
-
-            lblVersion.Text = confMan.ReturnVersion();
-            btnHome.ForeColor = Color.Black;
-            btnHome.BackColor = Color.DimGray;
-
             if (!confMan.CheckLicense() == true)
             {
                 LicenseForm license = new LicenseForm();
                 license.Show();
+            }
+            lblVersion.Text = confMan.ReturnVersion();
+            btnHome.ForeColor = Color.Black;
+            btnHome.BackColor = Color.DimGray;
+
+            if (Settings.Default.TipLabelsHidden)
+            {
+                HideTipLabels();
             }
         }
 
@@ -93,11 +96,6 @@ namespace Eclipse_Mod_Manager
             btnSettings.BackColor = Color.FromArgb(40, 40, 40);
         }
 
-        private void navbarPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -105,6 +103,11 @@ namespace Eclipse_Mod_Manager
 
         private void btnSettings_Click(object sender, EventArgs e)
         {
+            SettingsPage subSettingsPage = new SettingsPage();
+            frmMainPanel.Controls.Clear();
+            frmMainPanel.Controls.Add(subSettingsPage);
+            subSettingsPage.Show();
+
             btnSettings.ForeColor = Color.Black;
             btnSettings.BackColor = Color.DimGray;
 
@@ -118,6 +121,39 @@ namespace Eclipse_Mod_Manager
         private void titleBar_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+        private void HideTipLabels()
+        {
+            lblFirstLaunchTip.Visible = false;
+            lblFirstLaunchTip.Enabled = false;
+            lblFirstLaunchTip2.Visible = false;
+            lblFirstLaunchTip2.Visible = false;
+        }
+        private void lblFirstLaunchTip_Click(object sender, EventArgs e)
+        {
+            HideTipLabels();
+            confMan.DisableTipLabels();
+        }
+        private void lblFirstLaunchTip2_Click(object sender, EventArgs e)
+        {
+            HideTipLabels();
+            confMan.DisableTipLabels();
+        }
+
+        private void btnGitHub_Click(object sender, EventArgs e)
+        {
+            Process gProcess = new Process();
+            gProcess.StartInfo.FileName = "https://github.com/wroleader";
+            gProcess.Start();
+            gProcess.Close();
+        }
+
+        private void btnDonate_Click(object sender, EventArgs e)
+        {
+            Process gProcess = new Process();
+            gProcess.StartInfo.FileName = "https://paypal.me/mikkytzen";
+            gProcess.Start();
+            gProcess.Close();
         }
     }
 }

@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Eclipse_Mod_Manager.Properties;
 
 namespace Eclipse_Mod_Manager
 {
@@ -58,13 +59,28 @@ namespace Eclipse_Mod_Manager
         {
             ConfigManager confMan = new ConfigManager();
             confMan.AcceptLicense();
-            MessageBox.Show("Thank you for accepting the license.", "License accepted.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Thank you for accepting the license and welcome to Eclipse!\n\nBefore you continue, please remember to configure this application in the Settings page.", "Welcome to Eclipse!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }
 
         private void LicenseForm_Load(object sender, EventArgs e)
         {
+            if (Settings.Default.LicenseAccepted == true)
+            {
+                btnCloseLicense.Visible = true;
+                btnAccept.Visible = false;
+                btnRefuse.Visible = false;
+                lblAgreement.Text = "Eclipse Mod Manager";
+            }
+            else
+            {
+                lblLicAccepted.Visible = false;
+            }
+        }
 
+        private void btnCloseLicense_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

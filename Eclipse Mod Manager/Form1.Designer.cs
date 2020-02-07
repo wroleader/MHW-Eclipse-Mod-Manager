@@ -34,12 +34,16 @@
             this.button1 = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.navbarPanel = new System.Windows.Forms.Panel();
+            this.btnDonate = new System.Windows.Forms.Button();
+            this.btnGitHub = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnSettings = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.btnModList = new System.Windows.Forms.Button();
             this.lblVersion = new System.Windows.Forms.Label();
             this.frmMainPanel = new System.Windows.Forms.Panel();
+            this.lblFirstLaunchTip2 = new System.Windows.Forms.Label();
+            this.lblFirstLaunchTip = new System.Windows.Forms.Label();
             this.lblDetectHome = new System.Windows.Forms.Label();
             this.titleBar.SuspendLayout();
             this.navbarPanel.SuspendLayout();
@@ -55,7 +59,7 @@
             this.titleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.titleBar.Location = new System.Drawing.Point(0, 0);
             this.titleBar.Name = "titleBar";
-            this.titleBar.Size = new System.Drawing.Size(916, 26);
+            this.titleBar.Size = new System.Drawing.Size(915, 26);
             this.titleBar.TabIndex = 0;
             this.titleBar.Paint += new System.Windows.Forms.PaintEventHandler(this.titleBar_Paint);
             this.titleBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.titleBar_MouseMove);
@@ -101,6 +105,8 @@
             // navbarPanel
             // 
             this.navbarPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            this.navbarPanel.Controls.Add(this.btnDonate);
+            this.navbarPanel.Controls.Add(this.btnGitHub);
             this.navbarPanel.Controls.Add(this.btnClose);
             this.navbarPanel.Controls.Add(this.btnSettings);
             this.navbarPanel.Controls.Add(this.btnHome);
@@ -110,7 +116,36 @@
             this.navbarPanel.Name = "navbarPanel";
             this.navbarPanel.Size = new System.Drawing.Size(207, 458);
             this.navbarPanel.TabIndex = 1;
-            this.navbarPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.navbarPanel_Paint);
+            // 
+            // btnDonate
+            // 
+            this.btnDonate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnDonate.FlatAppearance.BorderSize = 0;
+            this.btnDonate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDonate.Font = new System.Drawing.Font("Consolas", 12F);
+            this.btnDonate.ForeColor = System.Drawing.Color.Gray;
+            this.btnDonate.Location = new System.Drawing.Point(101, 303);
+            this.btnDonate.Name = "btnDonate";
+            this.btnDonate.Size = new System.Drawing.Size(102, 42);
+            this.btnDonate.TabIndex = 6;
+            this.btnDonate.Text = "Donate";
+            this.btnDonate.UseVisualStyleBackColor = false;
+            this.btnDonate.Click += new System.EventHandler(this.btnDonate_Click);
+            // 
+            // btnGitHub
+            // 
+            this.btnGitHub.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnGitHub.FlatAppearance.BorderSize = 0;
+            this.btnGitHub.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGitHub.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGitHub.ForeColor = System.Drawing.Color.Gray;
+            this.btnGitHub.Location = new System.Drawing.Point(0, 303);
+            this.btnGitHub.Name = "btnGitHub";
+            this.btnGitHub.Size = new System.Drawing.Size(101, 42);
+            this.btnGitHub.TabIndex = 5;
+            this.btnGitHub.Text = "GitHub";
+            this.btnGitHub.UseVisualStyleBackColor = false;
+            this.btnGitHub.Click += new System.EventHandler(this.btnGitHub_Click);
             // 
             // btnClose
             // 
@@ -123,8 +158,7 @@
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(203, 39);
             this.btnClose.TabIndex = 4;
-            this.btnClose.Text = "Exit Eclipse MM";
-            this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClose.Text = "Exit Eclipse";
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
@@ -140,7 +174,6 @@
             this.btnSettings.Size = new System.Drawing.Size(203, 39);
             this.btnSettings.TabIndex = 3;
             this.btnSettings.Text = "Settings";
-            this.btnSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSettings.UseVisualStyleBackColor = false;
             this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
             // 
@@ -156,7 +189,6 @@
             this.btnHome.Size = new System.Drawing.Size(203, 39);
             this.btnHome.TabIndex = 2;
             this.btnHome.Text = "Home";
-            this.btnHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHome.UseVisualStyleBackColor = false;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
@@ -172,7 +204,6 @@
             this.btnModList.Size = new System.Drawing.Size(203, 39);
             this.btnModList.TabIndex = 1;
             this.btnModList.Text = "Mods";
-            this.btnModList.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnModList.UseVisualStyleBackColor = false;
             this.btnModList.Click += new System.EventHandler(this.btnModList_Click);
             // 
@@ -191,11 +222,42 @@
             // 
             this.frmMainPanel.BackColor = System.Drawing.Color.DimGray;
             this.frmMainPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("frmMainPanel.BackgroundImage")));
+            this.frmMainPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.frmMainPanel.Controls.Add(this.lblFirstLaunchTip2);
+            this.frmMainPanel.Controls.Add(this.lblFirstLaunchTip);
             this.frmMainPanel.Controls.Add(this.lblDetectHome);
             this.frmMainPanel.Location = new System.Drawing.Point(203, 26);
             this.frmMainPanel.Name = "frmMainPanel";
-            this.frmMainPanel.Size = new System.Drawing.Size(713, 457);
+            this.frmMainPanel.Size = new System.Drawing.Size(712, 457);
             this.frmMainPanel.TabIndex = 2;
+            // 
+            // lblFirstLaunchTip2
+            // 
+            this.lblFirstLaunchTip2.AutoSize = true;
+            this.lblFirstLaunchTip2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblFirstLaunchTip2.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.lblFirstLaunchTip2.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFirstLaunchTip2.ForeColor = System.Drawing.Color.Navy;
+            this.lblFirstLaunchTip2.Location = new System.Drawing.Point(64, 376);
+            this.lblFirstLaunchTip2.Name = "lblFirstLaunchTip2";
+            this.lblFirstLaunchTip2.Size = new System.Drawing.Size(255, 15);
+            this.lblFirstLaunchTip2.TabIndex = 2;
+            this.lblFirstLaunchTip2.Text = "(Don\'t wanna see this anymore? Click me!)";
+            this.lblFirstLaunchTip2.Click += new System.EventHandler(this.lblFirstLaunchTip2_Click);
+            // 
+            // lblFirstLaunchTip
+            // 
+            this.lblFirstLaunchTip.AutoSize = true;
+            this.lblFirstLaunchTip.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblFirstLaunchTip.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.lblFirstLaunchTip.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFirstLaunchTip.ForeColor = System.Drawing.Color.Navy;
+            this.lblFirstLaunchTip.Location = new System.Drawing.Point(10, 355);
+            this.lblFirstLaunchTip.Name = "lblFirstLaunchTip";
+            this.lblFirstLaunchTip.Size = new System.Drawing.Size(362, 21);
+            this.lblFirstLaunchTip.TabIndex = 1;
+            this.lblFirstLaunchTip.Text = "<--- Configure Eclipse before using it!";
+            this.lblFirstLaunchTip.Click += new System.EventHandler(this.lblFirstLaunchTip_Click);
             // 
             // lblDetectHome
             // 
@@ -210,7 +272,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(916, 483);
+            this.ClientSize = new System.Drawing.Size(915, 483);
             this.Controls.Add(this.frmMainPanel);
             this.Controls.Add(this.navbarPanel);
             this.Controls.Add(this.titleBar);
@@ -241,6 +303,10 @@
         private System.Windows.Forms.Button btnSettings;
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Label lblDetectHome;
+        private System.Windows.Forms.Label lblFirstLaunchTip;
+        private System.Windows.Forms.Label lblFirstLaunchTip2;
+        private System.Windows.Forms.Button btnDonate;
+        private System.Windows.Forms.Button btnGitHub;
     }
 }
 
