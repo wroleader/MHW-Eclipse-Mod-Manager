@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.titleBar = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -42,8 +41,6 @@
             this.btnModList = new System.Windows.Forms.Button();
             this.lblVersion = new System.Windows.Forms.Label();
             this.frmMainPanel = new System.Windows.Forms.Panel();
-            this.lblFirstLaunchTip2 = new System.Windows.Forms.Label();
-            this.lblFirstLaunchTip = new System.Windows.Forms.Label();
             this.lblDetectHome = new System.Windows.Forms.Label();
             this.titleBar.SuspendLayout();
             this.navbarPanel.SuspendLayout();
@@ -128,7 +125,7 @@
             this.btnDonate.Name = "btnDonate";
             this.btnDonate.Size = new System.Drawing.Size(102, 42);
             this.btnDonate.TabIndex = 6;
-            this.btnDonate.Text = "Donate";
+            this.btnDonate.Text = "Website";
             this.btnDonate.UseVisualStyleBackColor = false;
             this.btnDonate.Click += new System.EventHandler(this.btnDonate_Click);
             // 
@@ -221,43 +218,13 @@
             // frmMainPanel
             // 
             this.frmMainPanel.BackColor = System.Drawing.Color.DimGray;
-            this.frmMainPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("frmMainPanel.BackgroundImage")));
             this.frmMainPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.frmMainPanel.Controls.Add(this.lblFirstLaunchTip2);
-            this.frmMainPanel.Controls.Add(this.lblFirstLaunchTip);
             this.frmMainPanel.Controls.Add(this.lblDetectHome);
+            this.frmMainPanel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.frmMainPanel.Location = new System.Drawing.Point(203, 26);
             this.frmMainPanel.Name = "frmMainPanel";
             this.frmMainPanel.Size = new System.Drawing.Size(712, 457);
             this.frmMainPanel.TabIndex = 2;
-            // 
-            // lblFirstLaunchTip2
-            // 
-            this.lblFirstLaunchTip2.AutoSize = true;
-            this.lblFirstLaunchTip2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblFirstLaunchTip2.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.lblFirstLaunchTip2.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFirstLaunchTip2.ForeColor = System.Drawing.Color.Navy;
-            this.lblFirstLaunchTip2.Location = new System.Drawing.Point(64, 376);
-            this.lblFirstLaunchTip2.Name = "lblFirstLaunchTip2";
-            this.lblFirstLaunchTip2.Size = new System.Drawing.Size(255, 15);
-            this.lblFirstLaunchTip2.TabIndex = 2;
-            this.lblFirstLaunchTip2.Text = "(Don\'t wanna see this anymore? Click me!)";
-            this.lblFirstLaunchTip2.Click += new System.EventHandler(this.lblFirstLaunchTip2_Click);
-            // 
-            // lblFirstLaunchTip
-            // 
-            this.lblFirstLaunchTip.AutoSize = true;
-            this.lblFirstLaunchTip.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblFirstLaunchTip.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.lblFirstLaunchTip.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFirstLaunchTip.ForeColor = System.Drawing.Color.Navy;
-            this.lblFirstLaunchTip.Location = new System.Drawing.Point(10, 355);
-            this.lblFirstLaunchTip.Name = "lblFirstLaunchTip";
-            this.lblFirstLaunchTip.Size = new System.Drawing.Size(362, 21);
-            this.lblFirstLaunchTip.TabIndex = 1;
-            this.lblFirstLaunchTip.Text = "<--- Configure Eclipse before using it!";
-            this.lblFirstLaunchTip.Click += new System.EventHandler(this.lblFirstLaunchTip_Click);
             // 
             // lblDetectHome
             // 
@@ -279,6 +246,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.IsMdiContainer = true;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Eclipse Mod Manager";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.titleBar.ResumeLayout(false);
@@ -303,8 +271,6 @@
         private System.Windows.Forms.Button btnSettings;
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Label lblDetectHome;
-        private System.Windows.Forms.Label lblFirstLaunchTip;
-        private System.Windows.Forms.Label lblFirstLaunchTip2;
         private System.Windows.Forms.Button btnDonate;
         private System.Windows.Forms.Button btnGitHub;
     }

@@ -51,19 +51,18 @@ namespace Eclipse_Mod_Manager
         private void Form1_Load(object sender, EventArgs e)
         {
             confMan.InitSettings();
-            if (!confMan.CheckLicense() == true)
+            if (!confMan.CheckLicense())
             {
                 LicenseForm license = new LicenseForm();
-                license.Show();
+                license.ShowDialog(this);
             }
+            MainPage subMainPage = new MainPage();
+            frmMainPanel.Controls.Clear();
+            frmMainPanel.Controls.Add(subMainPage);
+
             lblVersion.Text = confMan.ReturnVersion();
             btnHome.ForeColor = Color.Black;
             btnHome.BackColor = Color.DimGray;
-
-            if (Settings.Default.TipLabelsHidden)
-            {
-                HideTipLabels();
-            }
         }
 
         private void btnModList_Click(object sender, EventArgs e)
@@ -85,7 +84,10 @@ namespace Eclipse_Mod_Manager
 
         private void btnHome_Click(object sender, EventArgs e)
         {
+            MainPage subMainPage = new MainPage();
             frmMainPanel.Controls.Clear();
+            frmMainPanel.Controls.Add(subMainPage);
+
             btnHome.ForeColor = Color.Black;
             btnHome.BackColor = Color.DimGray;
 
@@ -98,7 +100,11 @@ namespace Eclipse_Mod_Manager
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult dResult = MessageBox.Show("Do you want to close Eclipse?", "Eclipse Mod Manager", MessageBoxButtons.YesNo);
+            if (dResult == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
 
         private void btnSettings_Click(object sender, EventArgs e)
@@ -122,24 +128,6 @@ namespace Eclipse_Mod_Manager
         {
 
         }
-        private void HideTipLabels()
-        {
-            lblFirstLaunchTip.Visible = false;
-            lblFirstLaunchTip.Enabled = false;
-            lblFirstLaunchTip2.Visible = false;
-            lblFirstLaunchTip2.Visible = false;
-        }
-        private void lblFirstLaunchTip_Click(object sender, EventArgs e)
-        {
-            HideTipLabels();
-            confMan.DisableTipLabels();
-        }
-        private void lblFirstLaunchTip2_Click(object sender, EventArgs e)
-        {
-            HideTipLabels();
-            confMan.DisableTipLabels();
-        }
-
         private void btnGitHub_Click(object sender, EventArgs e)
         {
             Process gProcess = new Process();

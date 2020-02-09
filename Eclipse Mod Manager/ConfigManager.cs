@@ -4,6 +4,9 @@ using System.Text;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Windows.Forms;
+using System.Diagnostics;
+using System.Windows.Forms.VisualStyles;
 using Eclipse_Mod_Manager.Properties;
 
 namespace Eclipse_Mod_Manager
@@ -17,12 +20,11 @@ namespace Eclipse_Mod_Manager
             {
                 Directory.CreateDirectory(WorkingFolder);
             }
-
+            Settings.Default.ModsFolder = WorkingFolder;
             Settings.Default.FirstLaunch = false;
-            SaveSettings();
+            Save();
         }
-
-        private void SaveSettings()
+        private void Save()
         {
             Settings.Default.Save();
         }
@@ -30,7 +32,6 @@ namespace Eclipse_Mod_Manager
         {
             return WorkingFolder;
         }
-        
         public string ReturnVersion()
         {
             return "Version: " + Assembly.GetExecutingAssembly().GetName().Version;
@@ -38,23 +39,56 @@ namespace Eclipse_Mod_Manager
         public void AcceptLicense()
         {
             Settings.Default.LicenseAccepted = true;
-            SaveSettings();
+            Save();
         }
         public bool CheckLicense()
         {
             return Settings.Default.LicenseAccepted;
         }
-
         public void SaveGameFolder(string GFolder)
         {
             Settings.Default.GameFolder = GFolder;
-            SaveSettings();
+            Settings.Default.nativePCFolder = GFolder + @"\nativePC";
+            Save();
+        }
+        public void DisableTipLabels(bool setting)
+        {
+            if (setting)
+            {
+                Settings.Default.TipLabelsHidden = true;
+                Save();
+            }
+            else
+            {
+                Settings.Default.TipLabelsHidden = false;
+                Save();
+            }
         }
 
-        public void DisableTipLabels()
+        public bool GameFolderCorrect(string path)
         {
-            Settings.Default.TipLabelsHidden = true;
-            SaveSettings();
+            if (File.Exists(path + @"\MonsterHunterWorld.exe"))
+            {
+                return true;
+            }
+            return false;
+        }
+        public bool AreTipsDisabled()
+        {
+            if (Settings.Default.TipLabelsHidden)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public bool StrackersLoaderInstalled()
+        {
+            if (!File.Exists(Settings.Default.GameFolder + @"\dinput8.dll"))
+            {
+                return false;
+            }
+            return true;
         }
     }
 }

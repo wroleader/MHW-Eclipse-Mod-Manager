@@ -59,6 +59,12 @@
     <Compile Include="LicenseForm.Designer.cs">
       <DependentUpon>LicenseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MainPage.Designer.cs">
+      <DependentUpon>MainPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="ModManager.cs" />
     <Compile Include="ModMenu.cs">
       <SubType>UserControl</SubType>
@@ -79,6 +85,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LicenseForm.resx">
       <DependentUpon>LicenseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainPage.resx">
+      <DependentUpon>MainPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModMenu.resx">
       <DependentUpon>ModMenu.cs</DependentUpon>
