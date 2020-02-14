@@ -14,6 +14,7 @@ namespace Eclipse_Mod_Manager
     class ConfigManager
     {
         private string WorkingFolder = Environment.CurrentDirectory + @"\Mods";
+        private string RemovedFolder = Environment.CurrentDirectory + @"\RemovedMods";
         public void InitSettings()
         {
             if (!Directory.Exists(WorkingFolder))
@@ -21,6 +22,7 @@ namespace Eclipse_Mod_Manager
                 Directory.CreateDirectory(WorkingFolder);
             }
             Settings.Default.ModsFolder = WorkingFolder;
+            Settings.Default.RemovedFolder = RemovedFolder;
             Settings.Default.FirstLaunch = false;
             Save();
         }

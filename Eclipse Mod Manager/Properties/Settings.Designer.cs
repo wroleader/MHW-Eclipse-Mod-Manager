@@ -114,5 +114,17 @@ namespace Eclipse_Mod_Manager.Properties {
                 this["nativePCFolder"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string RemovedFolder {
+            get {
+                return ((string)(this["RemovedFolder"]));
+            }
+            set {
+                this["RemovedFolder"] = value;
+            }
+        }
     }
 }

@@ -69,6 +69,7 @@
             this.btnAddNewMod.TabIndex = 2;
             this.btnAddNewMod.Text = "Add Mod";
             this.btnAddNewMod.UseVisualStyleBackColor = false;
+            this.btnAddNewMod.Click += new System.EventHandler(this.btnAddNewMod_Click);
             // 
             // lblModList
             // 

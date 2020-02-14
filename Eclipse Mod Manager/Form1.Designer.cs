@@ -125,7 +125,7 @@
             this.btnDonate.Name = "btnDonate";
             this.btnDonate.Size = new System.Drawing.Size(102, 42);
             this.btnDonate.TabIndex = 6;
-            this.btnDonate.Text = "Website";
+            this.btnDonate.Text = "Donate\r\n";
             this.btnDonate.UseVisualStyleBackColor = false;
             this.btnDonate.Click += new System.EventHandler(this.btnDonate_Click);
             // 

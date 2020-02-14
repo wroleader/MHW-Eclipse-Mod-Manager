@@ -14,6 +14,7 @@ namespace Eclipse_Mod_Manager
     public partial class ModMenu : UserControl
     {
         ConfigManager ConfMan = new ConfigManager();
+        ModManager ModMan = new ModManager();
         private string WorkingFolder;
         public ModMenu()
         {
@@ -48,6 +49,19 @@ namespace Eclipse_Mod_Manager
                 listItem.Tag = file;
                 lstModList.Items.Add(listItem);
                 lstModList.View = View.List;
+            }
+        }
+
+        private void btnAddNewMod_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = "zip files (*.zip)|*.zip";
+            dialog.InitialDirectory = "C:\\";
+            dialog.Title = "Select the zip that contains the mod";
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                ModMan.AddMod(dialog.FileName, dialog.SafeFileName);
+                GenerateList();
             }
         }
     }
