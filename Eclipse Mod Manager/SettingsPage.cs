@@ -15,8 +15,8 @@ namespace Eclipse_Mod_Manager
 {
     public partial class SettingsPage : UserControl
     {
-        private ConfigManager confMan = new ConfigManager();
-        private Process gtProcess = new Process();
+        private readonly ConfigManager confMan = new ConfigManager();
+        private readonly Process gtProcess = new Process();
         public SettingsPage()
         {
             InitializeComponent();
@@ -90,6 +90,17 @@ namespace Eclipse_Mod_Manager
         {
             confMan.SaveGameFolder(foldBrowse.SelectedPath);
             MessageBox.Show("Settings saved successfully.", "Eclipse Mod Manager");
+        }
+
+        private void mainPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            UpdateForm uForm = new UpdateForm();
+            uForm.ShowDialog();
         }
     }
 }

@@ -68,7 +68,7 @@
             // lblTheLicense
             // 
             this.lblTheLicense.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTheLicense.ForeColor = System.Drawing.Color.Gray;
+            this.lblTheLicense.ForeColor = System.Drawing.Color.LightGray;
             this.lblTheLicense.Location = new System.Drawing.Point(12, 61);
             this.lblTheLicense.Name = "lblTheLicense";
             this.lblTheLicense.Size = new System.Drawing.Size(679, 330);

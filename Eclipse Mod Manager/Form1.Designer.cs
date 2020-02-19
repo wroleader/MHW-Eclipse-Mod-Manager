@@ -91,13 +91,15 @@
             // 
             this.lblTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.lblTitle.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.ForeColor = System.Drawing.Color.Gray;
-            this.lblTitle.Location = new System.Drawing.Point(365, 0);
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
+            this.lblTitle.Location = new System.Drawing.Point(0, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(186, 25);
+            this.lblTitle.Size = new System.Drawing.Size(915, 25);
             this.lblTitle.TabIndex = 9999;
             this.lblTitle.Text = "Eclipse Mod Manager";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTitle.Click += new System.EventHandler(this.lblTitle_Click);
+            this.lblTitle.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lblTitle_MouseMove);
             // 
             // navbarPanel
             // 
@@ -109,6 +111,7 @@
             this.navbarPanel.Controls.Add(this.btnHome);
             this.navbarPanel.Controls.Add(this.btnModList);
             this.navbarPanel.Controls.Add(this.lblVersion);
+            this.navbarPanel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.navbarPanel.Location = new System.Drawing.Point(0, 26);
             this.navbarPanel.Name = "navbarPanel";
             this.navbarPanel.Size = new System.Drawing.Size(207, 458);
@@ -120,7 +123,7 @@
             this.btnDonate.FlatAppearance.BorderSize = 0;
             this.btnDonate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDonate.Font = new System.Drawing.Font("Consolas", 12F);
-            this.btnDonate.ForeColor = System.Drawing.Color.Gray;
+            this.btnDonate.ForeColor = System.Drawing.Color.White;
             this.btnDonate.Location = new System.Drawing.Point(101, 303);
             this.btnDonate.Name = "btnDonate";
             this.btnDonate.Size = new System.Drawing.Size(102, 42);
@@ -135,7 +138,7 @@
             this.btnGitHub.FlatAppearance.BorderSize = 0;
             this.btnGitHub.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGitHub.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGitHub.ForeColor = System.Drawing.Color.Gray;
+            this.btnGitHub.ForeColor = System.Drawing.Color.White;
             this.btnGitHub.Location = new System.Drawing.Point(0, 303);
             this.btnGitHub.Name = "btnGitHub";
             this.btnGitHub.Size = new System.Drawing.Size(101, 42);
@@ -150,7 +153,7 @@
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.ForeColor = System.Drawing.Color.Gray;
+            this.btnClose.ForeColor = System.Drawing.Color.White;
             this.btnClose.Location = new System.Drawing.Point(0, 384);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(203, 39);
@@ -165,7 +168,7 @@
             this.btnSettings.FlatAppearance.BorderSize = 0;
             this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSettings.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSettings.ForeColor = System.Drawing.Color.Gray;
+            this.btnSettings.ForeColor = System.Drawing.Color.White;
             this.btnSettings.Location = new System.Drawing.Point(0, 345);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Size = new System.Drawing.Size(203, 39);
@@ -180,7 +183,7 @@
             this.btnHome.FlatAppearance.BorderSize = 0;
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHome.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHome.ForeColor = System.Drawing.Color.Gray;
+            this.btnHome.ForeColor = System.Drawing.Color.White;
             this.btnHome.Location = new System.Drawing.Point(0, 52);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(203, 39);
@@ -195,7 +198,7 @@
             this.btnModList.FlatAppearance.BorderSize = 0;
             this.btnModList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModList.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModList.ForeColor = System.Drawing.Color.Gray;
+            this.btnModList.ForeColor = System.Drawing.Color.White;
             this.btnModList.Location = new System.Drawing.Point(0, 91);
             this.btnModList.Name = "btnModList";
             this.btnModList.Size = new System.Drawing.Size(203, 39);
@@ -207,7 +210,7 @@
             // lblVersion
             // 
             this.lblVersion.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVersion.ForeColor = System.Drawing.Color.Gray;
+            this.lblVersion.ForeColor = System.Drawing.Color.White;
             this.lblVersion.Location = new System.Drawing.Point(-1, 432);
             this.lblVersion.Name = "lblVersion";
             this.lblVersion.Size = new System.Drawing.Size(204, 16);

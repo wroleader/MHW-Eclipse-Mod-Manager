@@ -13,8 +13,8 @@ namespace Eclipse_Mod_Manager
 {
     public partial class ModMenu : UserControl
     {
-        ConfigManager ConfMan = new ConfigManager();
-        ModManager ModMan = new ModManager();
+        readonly ConfigManager ConfMan = new ConfigManager();
+        readonly ModManager ModMan = new ModManager();
         private string WorkingFolder;
         public ModMenu()
         {
@@ -45,8 +45,10 @@ namespace Eclipse_Mod_Manager
             foreach (string file in files)
             {
                 string fileName = Path.GetFileName(file);
-                ListViewItem listItem = new ListViewItem(fileName);
-                listItem.Tag = file;
+                ListViewItem listItem = new ListViewItem(fileName)
+                {
+                    Tag = file
+                };
                 lstModList.Items.Add(listItem);
                 lstModList.View = View.List;
             }
@@ -54,10 +56,12 @@ namespace Eclipse_Mod_Manager
 
         private void btnAddNewMod_Click(object sender, EventArgs e)
         {
-            OpenFileDialog dialog = new OpenFileDialog();
-            dialog.Filter = "zip files (*.zip)|*.zip";
-            dialog.InitialDirectory = "C:\\";
-            dialog.Title = "Select the zip that contains the mod";
+            OpenFileDialog dialog = new OpenFileDialog
+            {
+                Filter = "zip files (*.zip)|*.zip",
+                InitialDirectory = "C:\\",
+                Title = "Select the zip that contains the mod"
+            };
             if (dialog.ShowDialog() == DialogResult.OK)
             {
                 ModMan.AddMod(dialog.FileName, dialog.SafeFileName);

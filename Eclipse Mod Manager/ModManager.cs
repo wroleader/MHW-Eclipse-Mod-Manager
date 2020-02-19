@@ -20,13 +20,20 @@ namespace Eclipse_Mod_Manager
             }
             catch (Exception e)
             {
-                MessageBox.Show("There has been an error adding the mod.\n\nError: " + e);
+                MessageBox.Show("There has been an error adding the mod.\n\nError: " + e, "Eclipse Mod Manager", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         public void RemoveMod(string fileName)
         {
+            try
+            {
 
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("There was an error removing the mod.\n\nError: " + e,"Eclipse Mod Manager", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

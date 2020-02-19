@@ -34,33 +34,34 @@
             this.button2 = new System.Windows.Forms.Button();
             this.foldBrowse = new System.Windows.Forms.FolderBrowserDialog();
             this.alertPanel = new System.Windows.Forms.Panel();
+            this.lblStrckNotInstalled = new System.Windows.Forms.Label();
+            this.lblSettingsOk = new System.Windows.Forms.Label();
+            this.lblUnresIssues = new System.Windows.Forms.Label();
+            this.lblGFNotSet = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblAlerts = new System.Windows.Forms.Label();
-            this.lblGFNotSet = new System.Windows.Forms.Label();
-            this.lblUnresIssues = new System.Windows.Forms.Label();
             this.btnGitHub = new System.Windows.Forms.Button();
-            this.lblSettingsOk = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.appearancePanel = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblAppearance = new System.Windows.Forms.Label();
             this.mainPanel = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.lblEclipseSettings = new System.Windows.Forms.Label();
-            this.chkTips = new System.Windows.Forms.CheckBox();
             this.lblSomeTip = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.lblStrckNotInstalled = new System.Windows.Forms.Label();
+            this.chkTips = new System.Windows.Forms.CheckBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.lblEclipseSettings = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
             this.alertPanel.SuspendLayout();
             this.panel2.SuspendLayout();
             this.appearancePanel.SuspendLayout();
             this.panel3.SuspendLayout();
             this.mainPanel.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSelectFolder
@@ -137,6 +138,47 @@
             this.alertPanel.Size = new System.Drawing.Size(297, 137);
             this.alertPanel.TabIndex = 5;
             // 
+            // lblStrckNotInstalled
+            // 
+            this.lblStrckNotInstalled.AutoSize = true;
+            this.lblStrckNotInstalled.ForeColor = System.Drawing.Color.Maroon;
+            this.lblStrckNotInstalled.Location = new System.Drawing.Point(40, 62);
+            this.lblStrckNotInstalled.Name = "lblStrckNotInstalled";
+            this.lblStrckNotInstalled.Size = new System.Drawing.Size(217, 13);
+            this.lblStrckNotInstalled.TabIndex = 4;
+            this.lblStrckNotInstalled.Text = "Stracker\'s Loader is not installed.";
+            // 
+            // lblSettingsOk
+            // 
+            this.lblSettingsOk.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lblSettingsOk.Location = new System.Drawing.Point(-1, 75);
+            this.lblSettingsOk.Name = "lblSettingsOk";
+            this.lblSettingsOk.Size = new System.Drawing.Size(296, 23);
+            this.lblSettingsOk.TabIndex = 3;
+            this.lblSettingsOk.Text = "All settings are valid";
+            this.lblSettingsOk.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblSettingsOk.Visible = false;
+            // 
+            // lblUnresIssues
+            // 
+            this.lblUnresIssues.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUnresIssues.Location = new System.Drawing.Point(0, 23);
+            this.lblUnresIssues.Name = "lblUnresIssues";
+            this.lblUnresIssues.Size = new System.Drawing.Size(296, 17);
+            this.lblUnresIssues.TabIndex = 2;
+            this.lblUnresIssues.Text = "The following issues need your attention";
+            this.lblUnresIssues.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblGFNotSet
+            // 
+            this.lblGFNotSet.ForeColor = System.Drawing.Color.Maroon;
+            this.lblGFNotSet.Location = new System.Drawing.Point(0, 40);
+            this.lblGFNotSet.Name = "lblGFNotSet";
+            this.lblGFNotSet.Size = new System.Drawing.Size(296, 17);
+            this.lblGFNotSet.TabIndex = 1;
+            this.lblGFNotSet.Text = "Game folder not set";
+            this.lblGFNotSet.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
@@ -159,26 +201,6 @@
             this.lblAlerts.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblAlerts.Click += new System.EventHandler(this.lblAlerts_Click);
             // 
-            // lblGFNotSet
-            // 
-            this.lblGFNotSet.ForeColor = System.Drawing.Color.Maroon;
-            this.lblGFNotSet.Location = new System.Drawing.Point(0, 40);
-            this.lblGFNotSet.Name = "lblGFNotSet";
-            this.lblGFNotSet.Size = new System.Drawing.Size(296, 17);
-            this.lblGFNotSet.TabIndex = 1;
-            this.lblGFNotSet.Text = "Game folder not set";
-            this.lblGFNotSet.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblUnresIssues
-            // 
-            this.lblUnresIssues.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUnresIssues.Location = new System.Drawing.Point(0, 23);
-            this.lblUnresIssues.Name = "lblUnresIssues";
-            this.lblUnresIssues.Size = new System.Drawing.Size(296, 17);
-            this.lblUnresIssues.TabIndex = 2;
-            this.lblUnresIssues.Text = "The following issues need your attention";
-            this.lblUnresIssues.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // btnGitHub
             // 
             this.btnGitHub.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
@@ -193,17 +215,6 @@
             this.btnGitHub.Text = "Eclipse GitHub";
             this.btnGitHub.UseVisualStyleBackColor = false;
             this.btnGitHub.Click += new System.EventHandler(this.btnGitHub_Click);
-            // 
-            // lblSettingsOk
-            // 
-            this.lblSettingsOk.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lblSettingsOk.Location = new System.Drawing.Point(-1, 75);
-            this.lblSettingsOk.Name = "lblSettingsOk";
-            this.lblSettingsOk.Size = new System.Drawing.Size(296, 23);
-            this.lblSettingsOk.TabIndex = 3;
-            this.lblSettingsOk.Text = "All settings are valid";
-            this.lblSettingsOk.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblSettingsOk.Visible = false;
             // 
             // button3
             // 
@@ -255,6 +266,7 @@
             // 
             this.mainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(96)))), ((int)(((byte)(96)))));
             this.mainPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.mainPanel.Controls.Add(this.button4);
             this.mainPanel.Controls.Add(this.lblSomeTip);
             this.mainPanel.Controls.Add(this.panel1);
             this.mainPanel.Controls.Add(this.panel4);
@@ -269,38 +281,7 @@
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(706, 451);
             this.mainPanel.TabIndex = 9;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.panel4.Controls.Add(this.lblEclipseSettings);
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(705, 23);
-            this.panel4.TabIndex = 0;
-            // 
-            // lblEclipseSettings
-            // 
-            this.lblEclipseSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.lblEclipseSettings.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
-            this.lblEclipseSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblEclipseSettings.Location = new System.Drawing.Point(0, 0);
-            this.lblEclipseSettings.Name = "lblEclipseSettings";
-            this.lblEclipseSettings.Size = new System.Drawing.Size(705, 23);
-            this.lblEclipseSettings.TabIndex = 1;
-            this.lblEclipseSettings.Text = "Eclipse Settings";
-            this.lblEclipseSettings.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // chkTips
-            // 
-            this.chkTips.AutoSize = true;
-            this.chkTips.Location = new System.Drawing.Point(4, 29);
-            this.chkTips.Name = "chkTips";
-            this.chkTips.Size = new System.Drawing.Size(98, 17);
-            this.chkTips.TabIndex = 7;
-            this.chkTips.Text = "Disable Tips";
-            this.chkTips.UseVisualStyleBackColor = true;
-            this.chkTips.CheckedChanged += new System.EventHandler(this.chkTips_CheckedChanged);
+            this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPanel_Paint);
             // 
             // lblSomeTip
             // 
@@ -343,15 +324,52 @@
             this.label2.Text = "Misc";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblStrckNotInstalled
+            // chkTips
             // 
-            this.lblStrckNotInstalled.AutoSize = true;
-            this.lblStrckNotInstalled.ForeColor = System.Drawing.Color.Maroon;
-            this.lblStrckNotInstalled.Location = new System.Drawing.Point(40, 62);
-            this.lblStrckNotInstalled.Name = "lblStrckNotInstalled";
-            this.lblStrckNotInstalled.Size = new System.Drawing.Size(217, 13);
-            this.lblStrckNotInstalled.TabIndex = 4;
-            this.lblStrckNotInstalled.Text = "Stracker\'s Loader is not installed.";
+            this.chkTips.AutoSize = true;
+            this.chkTips.Location = new System.Drawing.Point(4, 29);
+            this.chkTips.Name = "chkTips";
+            this.chkTips.Size = new System.Drawing.Size(98, 17);
+            this.chkTips.TabIndex = 7;
+            this.chkTips.Text = "Disable Tips";
+            this.chkTips.UseVisualStyleBackColor = true;
+            this.chkTips.CheckedChanged += new System.EventHandler(this.chkTips_CheckedChanged);
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.panel4.Controls.Add(this.lblEclipseSettings);
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(705, 23);
+            this.panel4.TabIndex = 0;
+            // 
+            // lblEclipseSettings
+            // 
+            this.lblEclipseSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.lblEclipseSettings.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
+            this.lblEclipseSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblEclipseSettings.Location = new System.Drawing.Point(0, 0);
+            this.lblEclipseSettings.Name = "lblEclipseSettings";
+            this.lblEclipseSettings.Size = new System.Drawing.Size(705, 23);
+            this.lblEclipseSettings.TabIndex = 1;
+            this.lblEclipseSettings.Text = "Eclipse Settings";
+            this.lblEclipseSettings.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.Gray;
+            this.button4.Location = new System.Drawing.Point(-1, 418);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(146, 33);
+            this.button4.TabIndex = 11;
+            this.button4.Text = "Check for Updates";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // SettingsPage
             // 
@@ -370,10 +388,10 @@
             this.panel3.ResumeLayout(false);
             this.mainPanel.ResumeLayout(false);
             this.mainPanel.PerformLayout();
-            this.panel4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel5.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -404,5 +422,6 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblStrckNotInstalled;
+        private System.Windows.Forms.Button button4;
     }
 }

@@ -10,20 +10,22 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms.VisualStyles;
 using Eclipse_Mod_Manager.Properties;
 using System.Diagnostics;
+using AutoUpdaterDotNET;
 
 namespace Eclipse_Mod_Manager
 {
     public partial class Form1 : Form
     {
+        // Set up variables for Titlebar panel drag.
         public const int WN_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
 
         [DllImportAttribute("user32.dll")]
-        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
-
+        public static extern int SendMessage(IntPtr hWnd, int msg, int wParam, int lParam);
         [DllImportAttribute("user32.dll")]
         public static extern bool ReleaseCapture();
-        ConfigManager confMan = new ConfigManager();
+
+        readonly ConfigManager confMan = new ConfigManager();
         public Form1()
         {
             InitializeComponent();
@@ -57,11 +59,12 @@ namespace Eclipse_Mod_Manager
                 license.ShowDialog(this);
             }
             MainPage subMainPage = new MainPage();
+            
             frmMainPanel.Controls.Clear();
             frmMainPanel.Controls.Add(subMainPage);
 
             lblVersion.Text = confMan.ReturnVersion();
-            btnHome.ForeColor = Color.Black;
+            btnHome.ForeColor = Color.White;
             btnHome.BackColor = Color.DimGray;
         }
 
@@ -72,13 +75,13 @@ namespace Eclipse_Mod_Manager
             frmMainPanel.Controls.Add(subModMenu);
             subModMenu.Show();
 
-            btnHome.ForeColor = Color.Gray;
+            btnHome.ForeColor = Color.White;
             btnHome.BackColor = Color.FromArgb(40, 40, 40);
 
-            btnModList.ForeColor = Color.Black;
+            btnModList.ForeColor = Color.White;
             btnModList.BackColor = Color.DimGray;
 
-            btnSettings.ForeColor = Color.Gray;
+            btnSettings.ForeColor = Color.White;
             btnSettings.BackColor = Color.FromArgb(40, 40, 40);
         }
 
@@ -88,13 +91,13 @@ namespace Eclipse_Mod_Manager
             frmMainPanel.Controls.Clear();
             frmMainPanel.Controls.Add(subMainPage);
 
-            btnHome.ForeColor = Color.Black;
+            btnHome.ForeColor = Color.White;
             btnHome.BackColor = Color.DimGray;
 
-            btnModList.ForeColor = Color.Gray;
+            btnModList.ForeColor = Color.White;
             btnModList.BackColor = Color.FromArgb(40, 40, 40);
 
-            btnSettings.ForeColor = Color.Gray;
+            btnSettings.ForeColor = Color.White;
             btnSettings.BackColor = Color.FromArgb(40, 40, 40);
         }
 
@@ -114,13 +117,13 @@ namespace Eclipse_Mod_Manager
             frmMainPanel.Controls.Add(subSettingsPage);
             subSettingsPage.Show();
 
-            btnSettings.ForeColor = Color.Black;
+            btnSettings.ForeColor = Color.White;
             btnSettings.BackColor = Color.DimGray;
 
-            btnHome.ForeColor = Color.Gray;
+            btnHome.ForeColor = Color.White;
             btnHome.BackColor = Color.FromArgb(40, 40, 40);
 
-            btnModList.ForeColor = Color.Gray;
+            btnModList.ForeColor = Color.White;
             btnModList.BackColor = Color.FromArgb(40, 40, 40);
         }
 
@@ -139,9 +142,19 @@ namespace Eclipse_Mod_Manager
         private void btnDonate_Click(object sender, EventArgs e)
         {
             Process gProcess = new Process();
-            gProcess.StartInfo.FileName = "https://paypal.me/mikkytzen";
+            gProcess.StartInfo.FileName = "https://ko-fi.com/mikkytzen";
             gProcess.Start();
             gProcess.Close();
+        }
+        
+        private void lblTitle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTitle_MouseMove(object sender, MouseEventArgs e)
+        {
+            titleBar_MouseMove(sender, e);
         }
     }
 }
