@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.titleBar = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -116,6 +117,7 @@
             this.navbarPanel.Name = "navbarPanel";
             this.navbarPanel.Size = new System.Drawing.Size(207, 458);
             this.navbarPanel.TabIndex = 1;
+            this.navbarPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.navbarPanel_MouseMove);
             // 
             // btnDonate
             // 
@@ -226,7 +228,7 @@
             this.frmMainPanel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.frmMainPanel.Location = new System.Drawing.Point(203, 26);
             this.frmMainPanel.Name = "frmMainPanel";
-            this.frmMainPanel.Size = new System.Drawing.Size(712, 457);
+            this.frmMainPanel.Size = new System.Drawing.Size(712, 458);
             this.frmMainPanel.TabIndex = 2;
             // 
             // lblDetectHome
@@ -247,6 +249,7 @@
             this.Controls.Add(this.navbarPanel);
             this.Controls.Add(this.titleBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

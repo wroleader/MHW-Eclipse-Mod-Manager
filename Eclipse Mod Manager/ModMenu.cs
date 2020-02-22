@@ -29,11 +29,13 @@ namespace Eclipse_Mod_Manager
         private void ModMenu_Load(object sender, EventArgs e)
         {
             GenerateList();
+            emptyCheck();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             GenerateList();
+            emptyCheck();
         }
 
         private void GenerateList()
@@ -66,6 +68,33 @@ namespace Eclipse_Mod_Manager
             {
                 ModMan.AddMod(dialog.FileName, dialog.SafeFileName);
                 GenerateList();
+            }
+        }
+
+        private void btnRemMod_Click(object sender, EventArgs e)
+        {
+            if (lstModList.SelectedItems.Count > 0)
+            {
+
+            }
+            GenerateList();
+            emptyCheck();
+            btnRemMod.Enabled = false;
+        }
+
+        private void emptyCheck()
+        {
+            if (lstModList.Items.Count == 0)
+            {
+                lblNoMods.Visible = true;
+            }
+        }
+
+        private void lstModList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstModList.SelectedItems.Count > 0)
+            {
+                btnRemMod.Enabled = true;
             }
         }
     }

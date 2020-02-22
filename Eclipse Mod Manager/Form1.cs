@@ -156,5 +156,10 @@ namespace Eclipse_Mod_Manager
         {
             titleBar_MouseMove(sender, e);
         }
+
+        private void navbarPanel_MouseMove(object sender, MouseEventArgs e)
+        {
+            titleBar_MouseMove(sender, e);
+        }
     }
 }

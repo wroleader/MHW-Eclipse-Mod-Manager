@@ -28,7 +28,7 @@ namespace Eclipse_Mod_Manager
         {
             try
             {
-
+                File.Move(mySetts.Default.RemovedFolder + @"\" + fileName, mySetts.Default.RemovedFolder + @"\" + fileName);
             }
             catch (Exception e)
             {
