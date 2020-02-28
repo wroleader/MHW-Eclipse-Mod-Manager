@@ -130,6 +130,7 @@
             this.btnDonate.Name = "btnDonate";
             this.btnDonate.Size = new System.Drawing.Size(102, 42);
             this.btnDonate.TabIndex = 6;
+            this.btnDonate.TabStop = false;
             this.btnDonate.Text = "Donate\r\n";
             this.btnDonate.UseVisualStyleBackColor = false;
             this.btnDonate.Click += new System.EventHandler(this.btnDonate_Click);
@@ -145,6 +146,7 @@
             this.btnGitHub.Name = "btnGitHub";
             this.btnGitHub.Size = new System.Drawing.Size(101, 42);
             this.btnGitHub.TabIndex = 5;
+            this.btnGitHub.TabStop = false;
             this.btnGitHub.Text = "GitHub";
             this.btnGitHub.UseVisualStyleBackColor = false;
             this.btnGitHub.Click += new System.EventHandler(this.btnGitHub_Click);
@@ -160,6 +162,7 @@
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(203, 39);
             this.btnClose.TabIndex = 4;
+            this.btnClose.TabStop = false;
             this.btnClose.Text = "Exit Eclipse";
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -175,6 +178,7 @@
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Size = new System.Drawing.Size(203, 39);
             this.btnSettings.TabIndex = 3;
+            this.btnSettings.TabStop = false;
             this.btnSettings.Text = "Settings";
             this.btnSettings.UseVisualStyleBackColor = false;
             this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
@@ -190,6 +194,7 @@
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(203, 39);
             this.btnHome.TabIndex = 2;
+            this.btnHome.TabStop = false;
             this.btnHome.Text = "Home";
             this.btnHome.UseVisualStyleBackColor = false;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
@@ -205,6 +210,7 @@
             this.btnModList.Name = "btnModList";
             this.btnModList.Size = new System.Drawing.Size(203, 39);
             this.btnModList.TabIndex = 1;
+            this.btnModList.TabStop = false;
             this.btnModList.Text = "Mods";
             this.btnModList.UseVisualStyleBackColor = false;
             this.btnModList.Click += new System.EventHandler(this.btnModList_Click);

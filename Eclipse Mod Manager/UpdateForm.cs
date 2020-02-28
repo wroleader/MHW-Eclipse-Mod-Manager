@@ -80,7 +80,7 @@ namespace Eclipse_Mod_Manager
                 }
                 catch (Exception exception)
                 {
-                    MessageBox.Show("Eclipse cannot find the default web browser.\n\nTry manually visiting https://github.com/wroleader/MHW-Eclipse-Mod-Manager.", "Eclipse Mod Manager", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Eclipse cannot find the default web browser.\n\nTry manually visiting https://github.com/wroleader/MHW-Eclipse-Mod-Manager. \n\nError: " + exception, "Eclipse Mod Manager", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else if (button1.Text == "Close")

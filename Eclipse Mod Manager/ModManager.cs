@@ -35,5 +35,15 @@ namespace Eclipse_Mod_Manager
                 MessageBox.Show("There was an error removing the mod.\n\nError: " + e,"Eclipse Mod Manager", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        public void ApplyMods(string fileName)
+        {
+            MessageBox.Show(fileName);
+        }
+
+        public void DisableMods(string fileName)
+        {
+            MessageBox.Show(fileName);
+        }
     }
 }

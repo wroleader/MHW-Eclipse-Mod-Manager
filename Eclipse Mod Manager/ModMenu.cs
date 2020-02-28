@@ -77,9 +77,17 @@ namespace Eclipse_Mod_Manager
             {
 
             }
+
+            if (lstModList.SelectedItems.Count == 0)
+            {
+                btnRemMod.Enabled = false;
+            }
+            else if (lstModList.CheckedItems.Count == 0)
+            {
+                btnRemMod.Enabled = false;
+            }
             GenerateList();
             emptyCheck();
-            btnRemMod.Enabled = false;
         }
 
         private void emptyCheck()
@@ -95,6 +103,48 @@ namespace Eclipse_Mod_Manager
             if (lstModList.SelectedItems.Count > 0)
             {
                 btnRemMod.Enabled = true;
+            }
+            else if (lstModList.CheckedItems.Count > 0)
+            {
+                btnRemMod.Enabled = true;
+            }
+        }
+
+        private void lstModList_Click(object sender, EventArgs e)
+        {
+            if (lstModList.SelectedItems.Count > 0)
+            {
+                btnRemMod.Enabled = true;
+            }
+            else if (lstModList.CheckedItems.Count > 0)
+            {
+                btnRemMod.Enabled = true;
+            }
+        }
+
+        private void btnApply_Click(object sender, EventArgs e)
+        {
+            foreach (ListViewItem listItem in lstModList.Items)
+            {
+                if (listItem.Checked)
+                {
+                    ModMan.ApplyMods(listItem.Text);
+                }
+                else if (!listItem.Checked)
+                {
+                    ModMan.DisableMods(listItem.Text);
+                }
+            }
+        }
+
+        private void btnDisableAll_Click(object sender, EventArgs e)
+        {
+            foreach (ListViewItem listItem in lstModList.Items)
+            {
+                if (listItem.Checked)
+                {
+                    listItem.Checked = false;
+                }
             }
         }
     }
